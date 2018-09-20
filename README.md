@@ -1,2 +1,2 @@
-# image-editor
+# Image Editor
 A simple image editor 
