@@ -26,7 +26,6 @@ function start(){
     }
     c.toBlob(function(blob){
         blob_imgs[i++] = blob;
-        console.log(blob_imgs);
         if(i < imagens.length)start();
         else document.querySelector("#download-button").style.display = "block";
     })
@@ -37,15 +36,16 @@ function download(){
         var a = document.createElement("a"), url = URL.createObjectURL(blob_imgs[i]);
         a.href = url;
         a.download = imgs_name[i];
-        console.log();
         document.body.appendChild(a);
         a.click();
-        setTimeout(function() {
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }, 100);
+        document.body.removeChild(a);
     }
     reset();
+}
+
+function remove(a){
+    console.log(a);
+    document.body.removeChild(a);
 }
 
 function reset(){
