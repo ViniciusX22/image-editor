@@ -1,0 +1,66 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <title>Image Editor</title>
+    <style>
+        body, html {
+            margin: 0;
+        }
+
+        #container {
+            width: 90%;
+            height: 85%;
+            margin: 3% auto;
+            position: relative;
+        }
+
+        #canvas {
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            background-color: lightgray;
+        }
+
+        #input-imgs {
+            position: absolute;
+            left: 40%;
+            bottom: 5%;
+        }
+
+        #input-dctr {
+            position: absolute;
+            left: 40%;
+            bottom: 0;
+        }
+
+        #download-button {
+            position: absolute;
+            left: 45%;
+            bottom: -5%;
+            display: none;
+        }
+
+        /* * {
+            border: 1px dashed blue;
+        } */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        <p id="input-imgs">Imagens: <input type="file" name="imagens" onchange="getImages(event)" multiple></p>
+        <p id="input-dctr">Decorador: <input type="file" name="docorator" onchange="getDecorator(event)"></p>
+        <button id="download-button" onclick="download()">
+            Baixar imagens
+        </button>
+    </div>
+</body>
+</html>
