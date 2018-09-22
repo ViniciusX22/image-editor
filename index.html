@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/load-image.all.min.js"></script>
+    <!-- <script src="js/load-image.all.min.js"></script> -->
+    <script src="js/easeljs.min.js"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
     <title>Image Editor</title>
@@ -54,7 +55,7 @@
         } */
     </style>
 </head>
-<body>
+<body onload="init()">
     <div id="container">
         <canvas id="canvas"></canvas>
         <p id="input-imgs">Imagens: <input type="file" id="input" name="imagens" onchange="getImages(event)" multiple></p>

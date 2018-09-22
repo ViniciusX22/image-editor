@@ -4,6 +4,11 @@ var files;
 var file;
 var j = 0;
 var i = 0;
+var stage;
+
+function init(){
+	stage = createjs.Stage("canvas");
+}
 
 // window.onload = () => {
 // 	document.getElementById('input').onchange = function (e) {
