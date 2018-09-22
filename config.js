@@ -5,6 +5,22 @@ var file;
 var j = 0;
 var i = 0;
 
+// window.onload = () => {
+// 	document.getElementById('input').onchange = function (e) {
+// 	    for (var i = 0; i < e.target.files.length; i++) {
+// 	    	loadImage(
+// 	        	e.target.files[i],
+// 	       		function (img) {
+// 	       	     	imagens[i] = img;
+// 	       	     	imgs_name[i] = img.name;
+// 	       	     	console.log(img);
+// 	        	},
+// 	        	{maxWidth: 500} // Options
+// 	    	);
+// 	    }
+// 	};
+// }
+
 function getImages(e){
 	imagens = [];
 	i = j = 0;
@@ -56,7 +72,7 @@ function handleFileLoad(evt){
 
 function showMessage(){
 	// alert("Imagens configuradas com sucesso!");
-	// console.log(imgs_name);
+	console.log(imgs_name);
 }
 
 function handleImage(e){
