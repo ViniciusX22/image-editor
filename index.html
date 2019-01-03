@@ -3,10 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <script src="js/load-image.all.min.js"></script> -->
-    <script src="js/easeljs.min.js"></script>
-    <script src="config.js"></script>
-    <script src="script.js"></script>
     <title>Image Editor</title>
     <style>
         body, html {
@@ -33,36 +29,46 @@
 
         #input-imgs {
             position: absolute;
-            left: 40%;
+            left: 0;
             bottom: 5%;
         }
 
         #input-dctr {
             position: absolute;
-            left: 40%;
+            left: 0;
             bottom: 0;
         }
 
         #download-button {
             position: absolute;
-            left: 45%;
-            bottom: -5%;
+            left: 0;
+            bottom: -8%;
             display: none;
         }
 
-        /* * {
-            border: 1px dashed blue;
-        } */
+        #load-button {
+            position: absolute;
+            left: 0;
+            bottom: -3%;
+        }
     </style>
 </head>
 <body onload="init()">
     <div id="container">
         <canvas id="canvas"></canvas>
-        <p id="input-imgs">Imagens: <input type="file" id="input" name="imagens" onchange="getImages(event)" multiple></p>
-        <p id="input-dctr">Decorador: <input type="file" name="docorator" onchange="getDecorator(event)"></p>
-        <button id="download-button" onclick="download()">
-            Baixar imagens
+        <p id="input-imgs">Images: <input type="file" id="input" onchange="getImages(event)" multiple></p>
+        <p id="input-dctr">Decorator: <input type="file" onchange="getDecorator(event)"></p>
+        <button id="load-button" onclick="start()">
+            Load images
+        </button>
+        <button id="download-button" onclick="c.toBlob(drawImages)">
+            Download
         </button>
     </div>
+    <script src="js/libs/load-image.all.min.js"></script>
+    <script src="js/libs/FileManager.js"></script>
+    <script src="js/libs/easeljs.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

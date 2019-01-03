@@ -1,2 +1,2 @@
 # Image Editor
-A simple image editor 
+A simple editor to add some frame or decorator to images
