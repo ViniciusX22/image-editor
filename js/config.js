@@ -5,7 +5,8 @@ var indexImage = indexBlob = 0;
 
 function init(){
 	c = document.getElementById("canvas");
-	stage = new createjs.Stage("canvas");
+    stage = new createjs.Stage("canvas");
+    createjs.Touch.enable(stage);
 	stage.enableMouseOver(20);
 	createjs.Ticker.addEventListener("tick", () => stage.update());
 }
