@@ -2,7 +2,7 @@ var c, stage;
 var images = [];
 var decorator;
 var indexImage = indexBlob = 0;
-var update = false;
+var update;
 
 function init(){
 	c = document.getElementById("canvas");
