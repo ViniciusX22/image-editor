@@ -2,13 +2,20 @@ var c, stage;
 var images = [];
 var decorator;
 var indexImage = indexBlob = 0;
+var update = false;
 
 function init(){
 	c = document.getElementById("canvas");
     stage = new createjs.Stage("canvas");
     createjs.Touch.enable(stage);
-	stage.enableMouseOver(20);
-	createjs.Ticker.addEventListener("tick", () => stage.update());
+    stage.enableMouseOver(10);
+    stage.mouseMoveOutside = true;
+	createjs.Ticker.addEventListener("tick", (event) => {
+        if (update) {
+            update = false;
+            stage.update(event);
+        }
+    });
 }
 
 function getImages(e){
